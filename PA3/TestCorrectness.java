@@ -145,7 +145,7 @@ public class TestCorrectness {
 
 	public static void main(String[] args) throws Exception {
 		testSubsetSum();
-		//testKnapsack(); Still needs work
+		testKnapsack();
 		testMaxSumSubarray();
 		//testMIS(); Still needs work
 		testLCS();

@@ -1,11 +1,10 @@
+import java.util.Arrays;
 
 public class Knapsack01 {
 	
 	public static int findOptimalProfit(final int profits[], final int weights[], int numElements, int capacity) { // complete this function
 		int[] currentRow = new int[capacity + 1], preRow = new int[capacity + 1];
-		for (int i = 0; i < preRow.length; i++) {
-			preRow[i] = 0;
-		}
+		Arrays.fill(preRow, 0);
 		for (int i = 0; i < numElements; i++) {
 			if (weights[i] > capacity) {
 				// assign currentRow[j] = prevRow[j], where O <= j < weights[i]
@@ -13,9 +12,7 @@ public class Knapsack01 {
 					currentRow[j] = Math.max(preRow[j], preRow[j - weights[i]] + profits[i]);
 				}
 			}
-			for (int j = 0; i < currentRow.length; i++) {
-				currentRow[j] = preRow[j];
-			}
+			preRow = Arrays.copyOf(currentRow, currentRow.length);
 		}
 		return currentRow[capacity];
 	}
