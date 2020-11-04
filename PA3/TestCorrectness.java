@@ -144,10 +144,10 @@ public class TestCorrectness {
 	}
 
 	public static void main(String[] args) throws Exception {
-		testSubsetSum();
-		testKnapsack();
+		//testSubsetSum();
+		//testKnapsack();
 		testMaxSumSubarray();
-		testMIS();
-		testLCS();
+		//testMIS();
+		//testLCS();
 	}
 }
