@@ -2,6 +2,24 @@
 public class MaxSubarraySum {
 
 	public static int[] dynamicProgram(final int A[], int length) { // complete this function
+		int localMax = A[0], globalMax = A[0];
+		int localStartIndex = 0, globalStartIndex = 0, globalEndIndex = 0;
+		for (int i = 1; i < length; i++) {
+			if (localMax > 0) {
+				localMax += A[i];
+			} else {
+				localMax = A[i];
+				localStartIndex = i;
+			}
+			if (localMax > globalMax) {
+				globalMax = localMax;
+				globalStartIndex = localStartIndex;
+				globalEndIndex = i;
+			}
+		}
+		int[] result = new int[3];
+		result[0] = globalMax; result[1] = globalStartIndex; result[2] = globalEndIndex;
+		return result;
 	}
 
 	public static int[] divideAndConquer(final int A[], int length) {
