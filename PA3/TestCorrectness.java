@@ -4,10 +4,10 @@ import java.util.Arrays;
 
 public class TestCorrectness {
 
-	private static final String MIS1_TREE_PATH = "mis1.txt";
-	private static final String MIS2_TREE_PATH = "mis2.txt";
-	private static final String MIS3_TREE_PATH = "mis3.txt";
-	private static final String MIS4_TREE_PATH = "mis4.txt";
+	private static final String MIS1_TREE_PATH = "PA3/mis1.txt";
+	private static final String MIS2_TREE_PATH = "PA3/mis2.txt";
+	private static final String MIS3_TREE_PATH = "PA3/mis3.txt";
+	private static final String MIS4_TREE_PATH = "PA3/mis4.txt";
 
 	private static void testSubsetSumHelper(int elements[], int numElements, int targets[], int numTarget) {
 		System.out.println("Elements are " + Arrays.toString(elements));
@@ -147,7 +147,7 @@ public class TestCorrectness {
 		testSubsetSum();
 		testKnapsack();
 		testMaxSumSubarray();
-		//testMIS(); Still needs work
+		testMIS(); 
 		testLCS();
 	}
 }
