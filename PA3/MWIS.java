@@ -43,10 +43,21 @@ public class MWIS extends Tree {
 		return computedSum[node];
 	}
 
-	public void computeSet(int root) { // complete this function
-		// Do we make excl and incl class variables????
+	public void computeSet(int root) {
+		if(isIncludedSumLarger[root]) {
+			isInSet[root] = true;
+		}
+		for(int child : adjList.get(root)) {
+			computeSetHelper(child, root);
+		}
 	}
 
-	private void computeSetHelper(int node, int parent) { // complete this function
+	private void computeSetHelper(int node, int parent) { 
+		if(isIncludedSumLarger[node] && !isInSet[parent]) {
+			isInSet[node] = true;
+		}
+		for(int child : adjList.get(node)) {
+			computeSetHelper(child, node);
+		}
 	}
 }
